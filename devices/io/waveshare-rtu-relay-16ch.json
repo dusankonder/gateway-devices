@@ -1,0 +1,22 @@
+{
+  "format": 1,
+  "id": "waveshare-rtu-relay-16ch",
+  "version": 1,
+  "class": "io",
+  "vendor": "Waveshare",
+  "model": "Modbus RTU Relay 16CH",
+  "source": "https://www.waveshare.com/wiki/Modbus_RTU_Relay_16CH",
+  "serial": {
+    "baud": 9600,
+    "parity": "none",
+    "stopBits": 1
+  },
+  "channels": [
+    {
+      "table": "coil",
+      "start": 0,
+      "count": 16,
+      "label": "Relay"
+    }
+  ]
+}

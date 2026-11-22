@@ -1,0 +1,22 @@
+{
+  "format": 1,
+  "id": "waveshare-rtu-relay-8ch",
+  "version": 1,
+  "class": "io",
+  "vendor": "Waveshare",
+  "model": "Modbus RTU Relay (8 relays)",
+  "source": "https://www.waveshare.com/wiki/Modbus_RTU_Relay",
+  "serial": {
+    "baud": 9600,
+    "parity": "none",
+    "stopBits": 1
+  },
+  "channels": [
+    {
+      "table": "coil",
+      "start": 0,
+      "count": 8,
+      "label": "Relay"
+    }
+  ]
+}
