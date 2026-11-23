@@ -1,0 +1,428 @@
+{
+  "format": 1,
+  "id": "lg-therma-v-hydro",
+  "version": 1,
+  "class": "device",
+  "kind": "heatpump",
+  "vendor": "LG",
+  "model": "Therma V hydro kit (AWHP)",
+  "source": "https://www.lg.com/global/business/gateway",
+  "license": "not stated in the source",
+  "attribution": "Register map from the workbook 'Modbus AWHP_231027.xlsx', sheet '2022 AWHP 3party controler' (AWHP Hydrosplit). Holding register 3 is named 'Room air temp. circuit 1' there, the working configuration reads it as the room target temperature: to be checked. Not checked against the manual. Read only.",
+  "serial": {
+    "baud": 9600,
+    "parity": "none",
+    "stopBits": 1
+  },
+  "points": [
+    {
+      "label": "Water flow status",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "discrete",
+        "address": 0
+      }
+    },
+    {
+      "label": "Water pump",
+      "group": "Status",
+      "default": false,
+      "register": {
+        "table": "discrete",
+        "address": 1
+      }
+    },
+    {
+      "label": "External water pump",
+      "group": "Status",
+      "default": false,
+      "register": {
+        "table": "discrete",
+        "address": 2
+      }
+    },
+    {
+      "label": "Compressor",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "discrete",
+        "address": 3
+      }
+    },
+    {
+      "label": "Defrosting",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "discrete",
+        "address": 4
+      }
+    },
+    {
+      "label": "Hot water heating",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "discrete",
+        "address": 5
+      }
+    },
+    {
+      "label": "Silent mode",
+      "group": "Status",
+      "default": false,
+      "register": {
+        "table": "discrete",
+        "address": 6
+      }
+    },
+    {
+      "label": "Error",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 0,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "label": "Operating mode of the outdoor unit",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 1,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": "",
+          "options": {
+            "0": "Off",
+            "1": "Cooling",
+            "2": "Heating"
+          }
+        }
+      }
+    },
+    {
+      "label": "Inlet temperature",
+      "group": "Temperatures",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 2,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Outlet temperature",
+      "group": "Temperatures",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 3,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Heater outlet temperature",
+      "group": "Temperatures",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 4,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Hot water temperature",
+      "group": "Temperatures",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 5,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Solar temperature",
+      "group": "Temperatures",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 6,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Room temperature",
+      "group": "Temperatures",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 7,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Water flow",
+      "group": "Status",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 8,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "l/min"
+        }
+      }
+    },
+    {
+      "label": "Mix zone temperature",
+      "group": "Temperatures",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 9,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Room temperature, circuit 2",
+      "group": "Temperatures",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 10,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Energy state input",
+      "group": "Status",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 11,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "label": "Outdoor air temperature",
+      "group": "Temperatures",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 12,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Operating mode",
+      "group": "Setting",
+      "default": true,
+      "register": {
+        "table": "holding",
+        "address": 0,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": "",
+          "options": {
+            "0": "Cooling",
+            "3": "Auto",
+            "4": "Heating"
+          }
+        }
+      }
+    },
+    {
+      "label": "Control method",
+      "group": "Setting",
+      "default": true,
+      "register": {
+        "table": "holding",
+        "address": 1,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": "",
+          "options": {
+            "0": "Water outlet",
+            "1": "Water inlet",
+            "2": "Air",
+            "514": "Air RMC"
+          }
+        }
+      }
+    },
+    {
+      "label": "Target temperature, circuit 1",
+      "group": "Setting",
+      "default": true,
+      "register": {
+        "table": "holding",
+        "address": 2,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Room air temperature, circuit 1",
+      "group": "Setting",
+      "default": false,
+      "register": {
+        "table": "holding",
+        "address": 3,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Correction 1",
+      "group": "Setting",
+      "default": false,
+      "register": {
+        "table": "holding",
+        "address": 4,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Target temperature, circuit 2",
+      "group": "Setting",
+      "default": false,
+      "register": {
+        "table": "holding",
+        "address": 5,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Room air temperature, circuit 2",
+      "group": "Setting",
+      "default": false,
+      "register": {
+        "table": "holding",
+        "address": 6,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Correction 2",
+      "group": "Setting",
+      "default": false,
+      "register": {
+        "table": "holding",
+        "address": 7,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Target temperature, hot water",
+      "group": "Setting",
+      "default": false,
+      "register": {
+        "table": "holding",
+        "address": 8,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    }
+  ]
+}

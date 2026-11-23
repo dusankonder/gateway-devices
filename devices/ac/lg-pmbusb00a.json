@@ -1,0 +1,175 @@
+{
+  "format": 1,
+  "id": "lg-pmbusb00a",
+  "version": 1,
+  "class": "device",
+  "kind": "other",
+  "vendor": "LG",
+  "model": "PMBUSB00A (MULTI V indoor units)",
+  "source": "https://www.lg.com/global/business/gateway",
+  "license": "not stated in the source",
+  "attribution": "Memory map from the workbook 'Modbus Gateway_220927.xlsx', sheet PMBUSB00A (copy 'memoryMap LG Modbus Gateway Loxone.xlsx' has the same rows). Not checked against the manual. Read only.",
+  "serial": {
+    "baud": 9600,
+    "parity": "none",
+    "stopBits": 1
+  },
+  "units": {
+    "min": 0,
+    "max": 255,
+    "step": {
+      "coil": 16,
+      "discrete": 16,
+      "input": 20,
+      "holding": 20
+    },
+    "connected": 0
+  },
+  "points": [
+    {
+      "label": "Connected",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "discrete",
+        "address": 0
+      }
+    },
+    {
+      "label": "Alarm",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "discrete",
+        "address": 1
+      }
+    },
+    {
+      "label": "Filter alarm",
+      "group": "Status",
+      "default": false,
+      "register": {
+        "table": "discrete",
+        "address": 2
+      }
+    },
+    {
+      "label": "Error code",
+      "group": "Status",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 0,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "label": "Room temperature",
+      "group": "Temperatures",
+      "default": true,
+      "register": {
+        "table": "input",
+        "address": 1,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Pipe in temperature",
+      "group": "Temperatures",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 2,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Pipe out temperature",
+      "group": "Temperatures",
+      "default": false,
+      "register": {
+        "table": "input",
+        "address": 3,
+        "data": {
+          "type": "S16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    },
+    {
+      "label": "Operating mode",
+      "group": "Setting",
+      "default": true,
+      "register": {
+        "table": "holding",
+        "address": 0,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": "",
+          "options": {
+            "0": "Cooling",
+            "1": "Dehumidify",
+            "2": "Fan",
+            "3": "Auto",
+            "4": "Heating"
+          }
+        }
+      }
+    },
+    {
+      "label": "Fan speed",
+      "group": "Setting",
+      "default": true,
+      "register": {
+        "table": "holding",
+        "address": 1,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 1,
+          "unit": "",
+          "options": {
+            "1": "Low",
+            "2": "Mid",
+            "3": "High",
+            "4": "Auto"
+          }
+        }
+      }
+    },
+    {
+      "label": "Target temperature",
+      "group": "Setting",
+      "default": true,
+      "register": {
+        "table": "holding",
+        "address": 2,
+        "data": {
+          "type": "U16",
+          "order": "big",
+          "scale": 0.1,
+          "unit": "°C"
+        }
+      }
+    }
+  ]
+}
