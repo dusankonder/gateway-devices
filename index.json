@@ -1,8 +1,8 @@
 {
   "format": 1,
   "profiles": [
-    {"id":"lg-pmbusb00a","version":1,"kind":"other","vendor":"LG","model":"PMBUSB00A (MULTI V indoor units)","count":10,"outputs":0,"path":"devices/ac/lg-pmbusb00a.json"},
-    {"id":"lg-therma-v-hydro","version":1,"kind":"heatpump","vendor":"LG","model":"Therma V hydro kit (AWHP)","count":29,"outputs":0,"path":"devices/heatpump/lg-therma-v-hydro.json"},
+    {"id":"lg-pmbusb00a","version":2,"kind":"ac","vendor":"LG","model":"PMBUSB00A (MULTI V indoor units)","count":10,"outputs":0,"path":"devices/ac/lg-pmbusb00a.json"},
+    {"id":"lg-therma-v-hydro","version":2,"kind":"heatpump","vendor":"LG","model":"Therma V hydro kit (AWHP)","count":32,"outputs":0,"path":"devices/heatpump/lg-therma-v-hydro.json"},
     {"id":"sofar-hyd-ktl-3ph","version":1,"kind":"inverter","vendor":"Sofar","model":"HYD 5-20KTL-3PH","count":212,"outputs":0,"path":"devices/inverter/sofar-hyd-ktl-3ph.json"},
     {"id":"waveshare-rtu-io-8ch","version":1,"kind":"io","vendor":"Waveshare","model":"Modbus RTU IO 8CH (8 DI / 8 DO)","count":16,"outputs":8,"path":"devices/io/waveshare-rtu-io-8ch.json"},
     {"id":"waveshare-rtu-relay-16ch","version":1,"kind":"io","vendor":"Waveshare","model":"Modbus RTU Relay 16CH","count":16,"outputs":16,"path":"devices/io/waveshare-rtu-relay-16ch.json"},

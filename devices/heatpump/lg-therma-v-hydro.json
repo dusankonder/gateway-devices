@@ -1,7 +1,7 @@
 {
   "format": 1,
   "id": "lg-therma-v-hydro",
-  "version": 1,
+  "version": 2,
   "class": "device",
   "kind": "heatpump",
   "vendor": "LG",
@@ -15,6 +15,36 @@
     "stopBits": 1
   },
   "points": [
+    {
+      "label": "Operate on / off (heating / cooling)",
+      "group": "Control",
+      "default": true,
+      "write": true,
+      "register": {
+        "table": "coil",
+        "address": 0
+      }
+    },
+    {
+      "label": "Hot water on / off",
+      "group": "Control",
+      "default": false,
+      "write": true,
+      "register": {
+        "table": "coil",
+        "address": 1
+      }
+    },
+    {
+      "label": "Silent mode on / off",
+      "group": "Control",
+      "default": false,
+      "write": true,
+      "register": {
+        "table": "coil",
+        "address": 2
+      }
+    },
     {
       "label": "Water flow status",
       "group": "Status",
@@ -296,7 +326,8 @@
             "4": "Heating"
           }
         }
-      }
+      },
+      "write": true
     },
     {
       "label": "Control method",
@@ -332,7 +363,8 @@
           "scale": 0.1,
           "unit": "°C"
         }
-      }
+      },
+      "write": true
     },
     {
       "label": "Room air temperature, circuit 1",
@@ -377,7 +409,8 @@
           "scale": 0.1,
           "unit": "°C"
         }
-      }
+      },
+      "write": true
     },
     {
       "label": "Room air temperature, circuit 2",
@@ -422,7 +455,8 @@
           "scale": 0.1,
           "unit": "°C"
         }
-      }
+      },
+      "write": true
     }
   ]
 }

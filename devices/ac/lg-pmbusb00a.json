@@ -1,9 +1,9 @@
 {
   "format": 1,
   "id": "lg-pmbusb00a",
-  "version": 1,
+  "version": 2,
   "class": "device",
-  "kind": "other",
+  "kind": "ac",
   "vendor": "LG",
   "model": "PMBUSB00A (MULTI V indoor units)",
   "source": "https://www.lg.com/global/business/gateway",
