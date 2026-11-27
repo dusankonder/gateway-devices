@@ -1,0 +1,11 @@
+{
+  "format": 1,
+  "id": "velux-klf200",
+  "version": 1,
+  "class": "integration",
+  "driver": "velux-klf200",
+  "vendor": "Velux",
+  "model": "KLF 200 (io-homecontrol)",
+  "source": "https://www.velux.com/klf200",
+  "port": 51200
+}

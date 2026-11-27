@@ -1,6 +1,6 @@
 # gateway-devices
 
-Device profiles for the gateway: register maps of Modbus devices as JSON. Data only, no code.
+Device profiles for the gateway: register maps of Modbus devices, and integrations, as JSON. Data only, no code.
 
 > **None of these profiles has been tested on hardware by this project.** A wrong register can switch the wrong
 > output. Check a profile against the manual of your device before you use it.
@@ -13,6 +13,7 @@ Device profiles for the gateway: register maps of Modbus devices as JSON. Data o
 | `waveshare-rtu-relay-8ch` | Waveshare Modbus RTU Relay (8 relays) | 8 switched outputs | manufacturer's documentation |
 | `waveshare-rtu-relay-16ch` | Waveshare Modbus RTU Relay 16CH | 16 switched outputs | manufacturer's documentation |
 | `sofar-hyd-ktl-3ph` | Sofar HYD 5-20KTL-3PH | 212 values, read only | homeassistant-solax-modbus |
+| `velux-klf200` | Velux KLF 200 (io-homecontrol) | integration: blinds, awnings, windows of the KLF | Velux KLF 200 API specification |
 
 The exact source of each profile is in its `source` field.
 
@@ -21,13 +22,14 @@ The exact source of each profile is in its `source` field.
 - `index.json`: the list that is downloaded first (id, version, kind, name, counts, path).
 - `devices/io/<id>.json`: actuators and inputs.
 - `devices/<kind>/<id>.json`: devices with their own logic (`inverter`, `wallbox`, `battery`, `heatpump`, `other`).
+- `devices/integration/<id>.json`: another system the gateway talks to with a driver of its own firmware.
 
 For a gateway without internet download the files and load them as files, or copy the folder `devices` to
 `/library` on the SD card.
 
 ## Format 1
 
-Every profile has `format` (1), `id`, `version`, `class`, `vendor`, `model`, `source` (https link) and `serial`
+Every profile has `format` (1), `id`, `version`, `class`, `vendor`, `model`, `source` (https link) and, except an integration, `serial`
 (factory settings: `baud`, `parity` = none / even / odd, `stopBits` = 1 / 2).
 
 - `class: "io"` has `channels`, groups of channels that follow each other: `table`, `start`, `count`, `label`,
@@ -36,6 +38,8 @@ Every profile has `format` (1), `id`, `version`, `class`, `vendor`, `model`, `so
 - `class: "device"` has `kind`, `license`, `attribution` and `points`: `label`, `group`, `default` (selected
   when the profile is picked) and `register` (`table`, `address`, `data`). All of them are read only.
   Optional `detect`: registers with a serial number whose prefix identifies the family.
+- `class: "integration"` has `driver` (the part of the gateway firmware that talks to it, e.g. `velux-klf200`) and
+  `port`; no `serial`, no registers. The gateway needs a firmware with that driver.
 - `data`: `type` (U16, S16, U32, S32, F32, STR), `order` (big = high word first, little), `scale`, `unit`,
   for STR also `words`, optionally `options` (the meaning of the numbers).
 - Tables are `coil`, `discrete`, `holding`, `input`. Addresses are counted from 0, as they travel on the wire.
